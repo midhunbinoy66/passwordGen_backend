@@ -18,7 +18,7 @@ export const loginContoller =async(req:Request,res:Response)=>{
                     JWT_SECRET,
                     { expiresIn: '1h' } 
                 );
-                res.cookie('token', token, { httpOnly: true });
+                res.cookie('token', token);
                 return res.status(200).json({message:'Logged in',data:user})
             }else{
                 return res.status(401).json({
